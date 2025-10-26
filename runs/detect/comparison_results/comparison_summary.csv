@@ -1,0 +1,7 @@
+Metric,Train30 (30 epochs),Train50 (50 epochs)
+mAP@50,0.58199,0.69013
+mAP@50-95,0.44859,0.54916
+Precision,0.89442,0.92073
+Recall,0.5081,0.59285
+Box Loss,0.70717,0.55266
+Class Loss,0.56884,0.41136

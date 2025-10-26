@@ -1,0 +1,6 @@
+train: images/train
+val: images/val
+test: images/test
+
+nc: 7
+names: ['oxygen_tank', 'nitrogen_tank', 'first_aid_box', 'fire_alarm', 'safety_switch_panel', 'emergency_phone', 'fire_extinguisher']
