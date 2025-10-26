@@ -10,14 +10,6 @@ text
 Spacestation_Object_Detection/
 │
 ├── data/
-│   ├── images/
-│   │   ├── train/
-│   │   ├── val/
-│   │   └── test/
-│   ├── labels/
-│   │   ├── train/
-│   │   ├── val/
-│   │   └── test/
 │   └── data.yaml
 │
 ├── runs/
