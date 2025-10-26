@@ -1,44 +1,39 @@
 # Space Station Safety Object Detection
 
-#  OVERVIEW
+###  OVERVIEW
 This project uses the YOLOv8 object detection framework to identify critical safety objects inside space station environments. The objects detected include fire extinguishers, alarms, oxygen tanks, control panels, and other essential safety equipment to ensure crew safety.
 
 The dataset consists of images collected from simulated space station environments, labeled for these key objects. The model was trained on CPU, utilizing the YOLOv8n architecture, and fine-tuned for improved accuracy.
 
-Project Structure
-text
+##Project Structure
 Spacestation_Object_Detection/
-│
 ├── data/
 │   └── data.yaml
-│
+├── report/
+│   ├── detected_samples/
+│   │   ├── sample1.png
+│   │   ├── sample2.png
+│   │   ├── Final_Report.pdf.pdf
+│   │   ├── precision_recall.png
+│   │   └── training_performance.png
 ├── runs/
 │   └── detect/
-│       ├── train30/              # Training run for 30 epochs
-│       │   ├── results.csv
-│       │   ├── weights/
-│       │   │   ├── best.pt       # Best weights model after 30 epochs
-│       │   │   └── last.pt
-│       ├── train50/              # Fine-tuned training run for 50 epochs
-│       └── predict/              # Prediction results folder
-│
+│       ├── comparison_results/
+│       ├── predict50/
+│       ├── train30/
+│       ├── train50/
+│       ├── val30/
+│       └── val50/
 ├── scripts/
-│   ├── train_model.py           # Training commands and pipelines
-|   ├── predict_model.py         # Prediction script for test images
-│   ├── analyze_results_30_50.py # Comparison and visualization script
-│   ├── demo_app.py              # Streamlit demo app for live detection
-│
+│   ├── analyze_results_30_50.py
+│   ├── demo_app.py
+│   ├── predict_model.py
+│   └── train_model.py
+├── .gitattributes
+├── README.md
+└── requirements.txt
 
-├── requirements.txt             # Required Python packages
-├── README.md                   # This file
-└── report/
-    ├── training_performance.png
-    ├── precision_recall.png
-    ├── detected_samples/
-    │   ├── sample1.png
-    │   └── sample2.png
-    └── Final_Report.pdf
-Setup and Installation
+## Setup and Installation
 Clone or download this repository.
 
 Create and activate your Python environment (Anaconda recommended):
@@ -71,7 +66,7 @@ bash
 yolo predict model=runs/detect/train50/weights/best.pt source=data/images/test save=True device=cpu
 Output images with bounding boxes will be saved in runs/detect/predict/.
 
-Analyzing Results
+## Analyzing Results
 Run the comparison and visualization script to generate performance graphs:
 
 bash
@@ -87,7 +82,7 @@ bash
 streamlit run scripts/demo_app.py
 Upload any image to see bounding boxes drawn on detected safety objects.
 
-Results Summary
+## Results Summary
 Metric	Value
 Training Epochs	30 + 50 (fine-tuning)
 Model Architecture	YOLOv8n
@@ -98,7 +93,7 @@ Dataset	Falcon Space Station Safety Objects
 Training Device	CPU (Intel i5-12500H)
 The model achieved a significant improvement after fine-tuning from 0.58 to 0.69 mAP@0.5, demonstrating effective learning and optimization.
 
-Key Features
+## Key Features
 Multi-class detection: Identifies 7 different safety objects
 
 CPU-optimized: Trained entirely on CPU without GPU requirements
