@@ -5,7 +5,8 @@ This project uses the YOLOv8 object detection framework to identify critical saf
 
 The dataset consists of images collected from simulated space station environments, labeled for these key objects. The model was trained on CPU, utilizing the YOLOv8n architecture, and fine-tuned for improved accuracy.
 
-##Project Structure
+## Project Structure
+
 Spacestation_Object_Detection/
 ├── data/
 │   └── data.yaml
